@@ -33,4 +33,5 @@ Route::view('/blog', 'theme.blog');
 
 Route::view('/blog-details', 'theme.blog-details');
 
-Route::resource('products', 'ProductController');
+Route::view('/admin', 'dashboard.index');
+
