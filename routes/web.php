@@ -21,16 +21,16 @@ Auth::routes();
 
 Route::view('/', 'home')->name('home');
 
-// Route::view('/shopping-cart', 'theme.shopping-cart');
+Route::view('/shopping-cart', 'theme.shopping-cart');
 
-// Route::view('/shop', 'theme.shop');
+Route::view('/shop', 'theme.shop');
 
-// Route::view('/product', 'theme.product');
+Route::view('/product', 'theme.product');
 
-// Route::view('/check-out', 'theme.check-out');
+Route::view('/check-out', 'theme.check-out');
 
-// Route::view('/blog', 'theme.blog');
+Route::view('/blog', 'theme.blog');
 
-// Route::view('/blog-details', 'theme.blog-details');
+Route::view('/blog-details', 'theme.blog-details');
 
 Route::resource('products', 'ProductController');
