@@ -33,7 +33,7 @@ Route::view('/blog', 'theme.blog');
 
 Route::view('/blog-details', 'theme.blog-details');
 
-Route::view('/admin', 'dashboard.index');
+Route::view('/admin-dashboard', 'dashboard.admin-dashboard.index');
 
 Route::view('/blanke', 'dashboard.admin-dashboard.blanke');
 
