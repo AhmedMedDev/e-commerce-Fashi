@@ -1,0 +1,13 @@
+.content-wrapper
+{
+    animation: transition 1s ease-in-out
+}
+@keyframes transition
+{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

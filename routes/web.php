@@ -35,3 +35,6 @@ Route::view('/blog-details', 'theme.blog-details');
 
 Route::view('/admin', 'dashboard.index');
 
+Route::view('/blanke', 'dashboard.admin-dashboard.blanke');
+
+
