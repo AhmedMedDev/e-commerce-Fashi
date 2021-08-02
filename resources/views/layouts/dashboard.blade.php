@@ -16,14 +16,14 @@
         @yield('css')
 
         <!-- Font Awesome Icons -->
-        <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
         <!-- Theme style -->
-        <link rel="stylesheet" href="dist/css/adminlte.min.css">
+        <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
         {{-- Custome Style --}}
-        <link rel="stylesheet" href="css/custome.css">
+        <link rel="stylesheet" href="{{ asset('css/custome.css') }}">
 
     </head>
     <body class="hold-transition sidebar-mini">
@@ -68,7 +68,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                            <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                            <img src="{{ asset('dist/img/user1-128x128.jpg') }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                 Brad Diesel
@@ -84,7 +84,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                            <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <img src="{{ asset('dist/img/user8-128x128.jpg') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                 John Pierce
@@ -100,7 +100,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                            <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <img src="{{ asset('dist/img/user3-128x128.jpg') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                 Nora Silvester
@@ -156,7 +156,7 @@
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
                 <a href="index3.html" class="brand-link">
-                    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                    <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                         style="opacity: .8">
                     <span class="brand-text font-weight-light">AdminLTE 3</span>
                 </a>
@@ -166,7 +166,7 @@
                     <!-- User Information -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div class="image">
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                            <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
                             <a href="#" class="d-block">Alexander Pierce</a>
@@ -174,318 +174,8 @@
                     </div>
 
                     <!-- Sidebar Menu -->
-                    <nav class="mt-2">
-                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                            {{-- Simple-Nav-Item --}}
-                            <li class="nav-item">
-                                <a href="{{ url('admin-dashboard') }}" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>Dashboard</p>
-                                </a>
-                            </li>
-
-                            {{-- Nav-Item Blog --}}
-                            <li class="nav-item has-treeview ">
-                                {{--  --}}
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fab fa-blogger"></i>
-                                    <p> Blog <i class="right fas fa-angle-left"></i> </p>
-                                </a>
-                                {{--  --}}
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                {{--  --}}
-                            </li>
-
-                            {{-- Nav-Item Contact Us --}}
-                            <li class="nav-item has-treeview ">
-                                {{--  --}}
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fas fas fa-mail-bulk"></i>
-                                    <p> Contact Us <i class="right fas fa-angle-left"></i> </p>
-                                </a>
-                                {{--  --}}
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                {{--  --}}
-                            </li>
-
-                            {{-- Nav-Item FQA --}}
-                            <li class="nav-item has-treeview ">
-                                {{--  --}}
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fas fa-question-circle"></i>
-                                    <p> FQA  <i class="right fas fa-angle-left"></i> </p>
-                                </a>
-                                {{--  --}}
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                {{--  --}}
-                            </li>
-
-                            {{-- Nav-Item Landing --}}
-                            <li class="nav-item has-treeview ">
-                                {{--  --}}
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                                    <p> Landing Page   <i class="right fas fa-angle-left"></i> </p>
-                                </a>
-                                {{--  --}}
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                {{--  --}}
-                            </li>
-
-                            {{-- Nav-Item Orders --}}
-                            <li class="nav-item has-treeview ">
-                                {{--  --}}
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fas fa-shopping-cart"></i>
-                                    <p> Orders <i class="right fas fa-angle-left"></i> </p>
-                                </a>
-                                {{--  --}}
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                {{--  --}}
-                            </li>
-
-                            {{-- Nav-Item Addresses--}}
-                            <li class="nav-item has-treeview ">
-                                {{--  --}}
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fas fa-address-card"></i>
-                                    <p> Addresses <i class="right fas fa-angle-left"></i> </p>
-                                </a>
-                                {{--  --}}
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                {{--  --}}
-                            </li>
-
-                            {{-- Nav-Item Users--}}
-                            <li class="nav-item has-treeview ">
-                                {{--  --}}
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fas fa-users"></i>
-                                    <p> Users <i class="right fas fa-angle-left"></i> </p>
-                                </a>
-                                {{--  --}}
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                {{--  --}}
-                            </li>
-
-                            {{-- Nav-Item Products --}}
-                            <li class="nav-item has-treeview ">
-                                {{--  --}}
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fas fa-tshirt"></i>
-                                    <p> Products <i class="right fas fa-angle-left"></i> </p>
-                                </a>
-                                {{--  --}}
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                {{--  --}}
-                            </li>
-
-                            {{-- Nav-Item Sizes --}}
-                            <li class="nav-item has-treeview ">
-                                {{--  --}}
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fab fa-product-hunt"></i>
-                                    <p> Sizes <i class="right fas fa-angle-left"></i> </p>
-                                </a>
-                                {{--  --}}
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                {{--  --}}
-                            </li>
-
-                            {{-- Nav-Item Colors --}}
-                            <li class="nav-item has-treeview ">
-                                {{--  --}}
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fas fa-palette"></i>
-                                    <p> Colors <i class="right fas fa-angle-left"></i> </p>
-                                </a>
-                                {{--  --}}
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                {{--  --}}
-                            </li>
-
-                            {{-- Nav-Item Product Category --}}
-                            <li class="nav-item has-treeview ">
-                                {{--  --}}
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fas fa-industry"></i>
-                                    <p> Product Category  <i class="right fas fa-angle-left"></i> </p>
-                                </a>
-                                {{--  --}}
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                {{--  --}}
-                            </li>
-
-                            {{-- Nav-Item Product Images --}}
-                            <li class="nav-item has-treeview ">
-                                {{--  --}}
-                                <a href="#" class="nav-link ">
-                                    <i class="nav-icon fas fa-images"></i>
-                                    <p> Product Images <i class="right fas fa-angle-left"></i> </p>
-                                </a>
-                                {{--  --}}
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                {{--  --}}
-                            </li>
-                            
-                        </ul>
-                    </nav>
+                    @include('include.dashboard.admin-nav')
+                    
                 </div>
                 <!-- /.sidebar -->
             </aside>
@@ -519,13 +209,13 @@
         <!-- ./wrapper -->
 
         <!-- jQuery -->
-        <script src="plugins/jquery/jquery.min.js"></script>
+        <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
         <!-- Bootstrap 4 -->
-        <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
         @yield('script')
 
         <!-- AdminLTE App -->
-        <script src="dist/js/adminlte.min.js"></script>
+        <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
     </body>
 </html>

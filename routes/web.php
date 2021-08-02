@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+define("PAGINATION_COUNT",5);
 
 Auth::routes();
 
+Route::resource('posts', 'PostController');
 
 Route::view('/', 'home')->name('home');
 
