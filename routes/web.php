@@ -22,9 +22,9 @@ Route::resource('posts', 'PostController');
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::view('/shopping-cart', 'theme.shopping-cart');
+Route::get('/shop', 'ShopController@index');
 
-Route::view('/shop', 'theme.shop');
+Route::view('/shopping-cart', 'theme.shopping-cart');
 
 Route::view('/product', 'theme.product');
 
