@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Post\StorePostRequest;
+use App\Http\Requests\Post\UpdatePostRequest;
 use App\Models\Post;
+use App\Traits\ImgUpload;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
+    use ImgUpload;
+
     /**
      * Display a listing of the resource.
      *
@@ -19,8 +25,8 @@ class PostController extends Controller
         return view('theme.blog',
         [
             'posts'       => DB::table('posts')->get(),
-            'categories'  => DB::table('categories')->get(),
-            'productTags' => DB::table('product_tags')->get(),
+            'postCategories'  => DB::table('post_categories')->get(),
+            'postTags' => DB::table('post_tags')->get(),
         ]);
     }
 
@@ -40,10 +46,24 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        // save post 
-        // return AJAX Response
+        try {
+            $request = $request->validated();
+
+            $request['user_id'] = Auth::user()->id;
+    
+            $fileName = $this->saveImage($request['photo'], 'uploads/posts/photos');
+    
+            $request['photo'] = "uploads/posts/photos/$fileName";
+    
+            $post =  Post::create( $request );
+    
+            return redirect('posts/create')->with(['success' => 'Success Store Post']);
+
+        } catch (\Exception $ex) {
+            return redirect('posts/create')->with(['error' => 'Error']);
+        }
     }
 
     /**
@@ -54,7 +74,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('theme.blog-details.blog.edit',
+        return view('theme.blog-details',
         [
             'post' => $post,
         ]);
@@ -81,7 +101,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(UpdatePostRequest $request, Post $post)
     {
         // update post
         // return theme.blog

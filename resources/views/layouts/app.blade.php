@@ -193,7 +193,7 @@
                     </div>
                     <nav class="nav-menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="{{url('/')}}">Home</a></li>
                             <li><a href="./shop.html">Shop</a></li>
                             <li><a href="#">Collection</a>
                                 <ul class="dropdown">
@@ -202,7 +202,7 @@
                                     <li><a href="#">Kid's</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="{{url('posts')}}">Blog</a></li>
                             <li><a href="./contact.html">Contact</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -221,7 +221,21 @@
             </div>
         </header>
         <!-- Header End -->
-        
+            <!-- Breadcrumb Section Begin -->
+            <div class="breacrumb-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="breadcrumb-text">
+                                <a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a>
+                                @yield('more-links')
+                                <span>@yield('current-page')</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Breadcrumb Section Begin -->
         <div id="app">
             @yield('content')
         </div>

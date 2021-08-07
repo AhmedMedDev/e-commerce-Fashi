@@ -1,21 +1,8 @@
 @extends('layouts.app')
 
+@section('current-page','Check Out')
+
 @section('content')
-    <!-- Breadcrumb Section Begin -->
-    <div class="breacrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text product-more">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./shop.html">Shop</a>
-                        <span>Check Out</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Section Begin -->
 
     <!-- Shopping Cart Section Begin -->
     <section class="checkout-section spad">

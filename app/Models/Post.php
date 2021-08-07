@@ -16,6 +16,7 @@ class Post extends Model
         'body' ,
         'photo' ,
         'mainTag', 
+        'quote' ,
         'user_id' ,
     ];
 

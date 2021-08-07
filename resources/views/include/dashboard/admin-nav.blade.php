@@ -18,6 +18,12 @@
             {{--  --}}
             <ul class="nav nav-treeview">
                 <li class="nav-item">
+                    <a href="{{url('posts')}}" class="nav-link @if (Request::is('posts')) active @endif">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Posts</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{url('posts/create')}}" class="nav-link @if (Request::is('posts/create')) active @endif">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Create Post</p>
