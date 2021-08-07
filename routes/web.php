@@ -20,7 +20,7 @@ Auth::routes();
 
 Route::resource('posts', 'PostController');
 
-Route::view('/', 'home')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::view('/shopping-cart', 'theme.shopping-cart');
 

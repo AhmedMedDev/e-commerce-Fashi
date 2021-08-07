@@ -24,10 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = DB::table('products')
-        ->join('categories','products.id','categories.id')
+        $products = DB::table('categories')
+        ->join('products','categories.id','products.category_id')
         ->get();
 
-        return view('index')->with('products',$products);
+
+        return view('home',
+        [
+            'products'      => $products,
+            'offers'        => DB::table('offers')->get(),
+            'posts'         => DB::table('posts')->limit(3)->get(),
+        ]);
     }
 }
